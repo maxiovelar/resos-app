@@ -15,32 +15,30 @@ function App() {
     error,
   } = useFetchRestaurants(searchQuery);
 
-  const noResults = restaurants && restaurants.length === 0;
+  const isEmpty = restaurants && restaurants.length === 0;
 
   const handleSearch = (searchValue: string) => {
     setSearchQuery(searchValue);
   };
 
   return (
-    <>
-      <Layout>
-        <Header />
-        <Box display="flex" className={style["header-section"]}>
-          <Image
-            width={"600px"}
-            src={headerImg}
-            alt="restaurant image"
-            className={style.image}
-          />
-          <SearchBar onSearch={handleSearch} />
-        </Box>
-        {error && <Alert severity="error">Error fetching restaurants</Alert>}
-        {noResults && (
-          <Alert severity="info">No results found for your search</Alert>
-        )}
-        <RestaurantList list={restaurants} />
-      </Layout>
-    </>
+    <Layout>
+      <Header />
+      <Box display="flex" className={style["header-section"]}>
+        <Image
+          width={"600px"}
+          src={headerImg}
+          alt="restaurant image"
+          className={style.image}
+        />
+        <SearchBar onSearch={handleSearch} />
+      </Box>
+      {error && <Alert severity="error">Error fetching restaurants</Alert>}
+      {isEmpty && (
+        <Alert severity="info">No results found for your search</Alert>
+      )}
+      <RestaurantList list={restaurants} />
+    </Layout>
   );
 }
 
