@@ -1,0 +1,15 @@
+:root {
+  --primary: #492a5b;
+  --secondary: #fec720;
+  --light: #e8e8e8;
+  --black: #000000;
+}
+
+.tag {
+  padding: 1px 8px;
+  color: var(--primary);
+  background-color: var(--secondary);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}

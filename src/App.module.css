@@ -1,0 +1,24 @@
+:root {
+  --light-gray: #f7fafb;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--light-gray);
+}
+
+.header-section {
+  margin-top: 60px;
+}
+
+@media (width <= 900px) {
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .image {
+    width: 400px;
+  }
+}

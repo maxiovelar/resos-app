@@ -1,0 +1,31 @@
+:root {
+  --primary: #492a5b;
+  --darker: #2c233b;
+}
+
+.skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  background: var(--darker);
+  background: linear-gradient(
+    0deg,
+    rgba(44, 35, 59, 1) 0%,
+    rgba(73, 42, 91, 1) 61%,
+    rgba(73, 42, 91, 1) 100%
+  );
+  z-index: -50;
+  transform-origin: top left;
+}
+
+@media (width >= 960px) {
+  .skewed {
+    rotate: -4deg;
+    translate: -20px;
+    border-bottom-left-radius: 60px;
+  }
+}
