@@ -4,8 +4,7 @@ import { FC } from "react";
 type TypographyMaterialUIProps = React.ComponentProps<
   typeof TypographyMaterialUI
 >;
-type Props = TypographyMaterialUIProps;
 
-export const Typography: FC<Props> = ({ ...props }) => {
+export const Typography: FC<TypographyMaterialUIProps> = ({ ...props }) => {
   return <Typography {...props}>{props.children}</Typography>;
 };

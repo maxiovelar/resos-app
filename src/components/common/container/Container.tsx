@@ -3,8 +3,7 @@ import { Container as ContainerMaterialUI } from "@mui/material";
 type ContainerMaterialUIProps = React.ComponentProps<
   typeof ContainerMaterialUI
 >;
-type Props = ContainerMaterialUIProps;
 
-export const Container: FC<Props> = ({ ...props }) => {
+export const Container: FC<ContainerMaterialUIProps> = ({ ...props }) => {
   return <ContainerMaterialUI {...props}>{props.children}</ContainerMaterialUI>;
 };
