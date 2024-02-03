@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material";
-import { ResOsIcon } from "../../icons/ResOsIcon";
+import { ResOsIcon } from "../../icons";
 import { useScrollPosition } from "../../../hooks";
 import { Box, Container } from "../../common";
 import style from "./Navbar.module.css";

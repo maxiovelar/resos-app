@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, InputBase, Paper } from "@mui/material";
 import { useDebounce } from "../../../hooks";
+import { SearchBarIcon } from "../../icons";
 
 interface Props {
   onSearch: (value: string) => void;
@@ -13,7 +13,7 @@ export const SearchBar: FC<Props> = ({
   placeholder = "Search...",
 }) => {
   const [inputValue, setInputValue] = useState("");
-  const debouncedInputValue = useDebounce(inputValue, 300);
+  const debouncedInputValue = useDebounce(inputValue, 500);
   onSearch(debouncedInputValue);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ export const SearchBar: FC<Props> = ({
         p: "2px 4px",
         display: "flex",
         alignItems: "center",
-        width: { xs: "90%", sm: 400 },
+        width: { xs: "90%", sm: 420 },
         height: "fit-content",
       }}
     >
@@ -37,8 +37,12 @@ export const SearchBar: FC<Props> = ({
         inputProps={{ "aria-label": `${placeholder.toLowerCase}` }}
         onChange={handleChange}
       />
-      <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-        <SearchIcon />
+      <IconButton
+        type="button"
+        sx={{ p: "10px", pointerEvents: "none" }}
+        aria-label="search"
+      >
+        <SearchBarIcon />
       </IconButton>
     </Paper>
   );

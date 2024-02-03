@@ -4,8 +4,8 @@ import { isRestaurantOpen } from "../../../helpers";
 import { Box, Tag, Typography } from "../../common";
 import { imagesUrl } from "../../../constants/constants";
 import style from "./RestaurantCard.module.css";
-
 import { CardContent, Card, CardMedia } from "@mui/material";
+import { ClockIcon, LocationIcon } from "../../icons";
 
 interface Props {
   restaurant: Restaurant;
@@ -51,9 +51,21 @@ export const RestaurantCard: FC<Props> = ({ restaurant }) => {
         </Box>
         <Box marginTop={2}>
           <Typography variant="body2" color="text.secondary">
+            <ClockIcon
+              fontSize={"small"}
+              sx={{ marginBottom: "-3px", marginRight: "5px" }}
+            />
             Open from {restaurant.hours.open} to {restaurant.hours.close}
           </Typography>
           <Typography variant="body2" color="text.secondary">
+            <LocationIcon
+              fontSize={"small"}
+              sx={{
+                marginBottom: "-3px",
+                marginRight: "5px",
+                marginTop: "5px",
+              }}
+            />
             {restaurant.address}
           </Typography>
         </Box>

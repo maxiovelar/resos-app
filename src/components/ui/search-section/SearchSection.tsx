@@ -11,14 +11,14 @@ export const SearchSection: FC<Props> = ({ handleSearch }) => {
   return (
     <Box
       display="flex"
-      justifyContent={"space-between"}
+      // justifyContent={"space-between"}
       alignItems={"center"}
-      marginTop={"60px"}
+      marginTop={"30px"}
       flexDirection={{ xs: "column", md: "row" }}
-      gap={"50px"}
+      gap={{ xs: "50px", md: "90px" }}
     >
       <Image
-        width={"550px"}
+        width={"510px"}
         src={headerImg}
         alt="restaurant image"
         className={style.image}
