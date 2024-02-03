@@ -54,6 +54,10 @@ describe("restaurant.helper.ts/isRestaurantOpen", () => {
     const result = isRestaurantOpen({ openHour, closeHour });
     expect(result).toBe(false);
   });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
 });
 
 describe("restaurants.helper.test.ts/generateImageUrl", () => {
