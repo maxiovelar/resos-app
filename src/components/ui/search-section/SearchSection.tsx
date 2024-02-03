@@ -11,7 +11,6 @@ export const SearchSection: FC<Props> = ({ handleSearch }) => {
   return (
     <Box
       display="flex"
-      // justifyContent={"space-between"}
       alignItems={"center"}
       marginTop={"30px"}
       flexDirection={{ xs: "column", md: "row" }}
