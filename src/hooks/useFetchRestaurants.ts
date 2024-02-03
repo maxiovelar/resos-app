@@ -7,7 +7,8 @@ export const useFetchRestaurants = (searchQuery?: string) => {
   const url = apiUrl;
   const [data, setData] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [isError, setIsError] = useState(false);
   const newUrl = !searchQuery ? url : url + queryBaseUrl + searchQuery;
 
   useEffect(() => {
@@ -15,13 +16,18 @@ export const useFetchRestaurants = (searchQuery?: string) => {
       setLoading(true);
       try {
         const result = await http.get(newUrl);
+
         if (Array.isArray(result)) {
           setData(result);
-          setError(null);
+          setIsError(false);
+
+          const hasItems = result.length === 0;
+          setIsEmpty(hasItems);
         }
       } catch (error) {
-        setError(error);
+        setIsError(true);
         setData([]);
+        setIsEmpty(true);
       } finally {
         setLoading(false);
       }
@@ -31,5 +37,5 @@ export const useFetchRestaurants = (searchQuery?: string) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
-  return { data, loading, error };
+  return { data, loading, isEmpty, isError };
 };
