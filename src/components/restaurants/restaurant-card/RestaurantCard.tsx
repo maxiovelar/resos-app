@@ -1,8 +1,11 @@
 import { FC } from "react";
 import { type Restaurant } from "../../../types";
 import { isRestaurantOpen } from "../../../helpers";
+import { Box, Tag, Typography } from "../../common";
+import { imagesUrl } from "../../../constants/constants";
 import style from "./RestaurantCard.module.css";
-import { Tag } from "../../common";
+
+import { CardContent, Card, CardMedia } from "@mui/material";
 
 interface Props {
   restaurant: Restaurant;
@@ -12,24 +15,49 @@ export const RestaurantCard: FC<Props> = ({ restaurant }) => {
   const openHour = restaurant.hours.open;
   const closeHour = restaurant.hours.close;
   const isOpen = isRestaurantOpen({ openHour, closeHour });
+  const cardImageUrl = `${imagesUrl}/${restaurant.image}`;
 
   return (
-    <div className={style.card}>
-      <section className={style["title-container"]}>
-        <h1 className={style.title}>{restaurant.name}</h1>
-        <span className={isOpen ? style.open : style.close}>
-          {isOpen ? "Open" : "Closed"}
-        </span>
-      </section>
-      <div className={style["tag-container"]}>
-        {restaurant.tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
-        ))}
-      </div>
-      <span>
-        Open from {restaurant.hours.open} to {restaurant.hours.close}
-      </span>
-      <span>{restaurant.address}</span>
-    </div>
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        sx={{ height: 180 }}
+        image={cardImageUrl}
+        title={`${restaurant.name}`}
+      />
+      <CardContent>
+        <Typography
+          variant="h2"
+          color={"primary"}
+          fontSize={"20px"}
+          fontWeight={"bold"}
+          textTransform={"uppercase"}
+          marginTop={0}
+        >
+          {restaurant.name}
+          <Typography
+            display={"inline"}
+            fontWeight={"bold"}
+            variant="body2"
+            marginLeft={1}
+            className={isOpen ? style.open : style.close}
+          >
+            {isOpen ? "Open" : "Closed"}
+          </Typography>
+        </Typography>
+        <Box display={"flex"} gap={"6px"} marginTop={"4px"}>
+          {restaurant.tags.map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </Box>
+        <Box marginTop={2}>
+          <Typography variant="body2" color="text.secondary">
+            Open from {restaurant.hours.open} to {restaurant.hours.close}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {restaurant.address}
+          </Typography>
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
