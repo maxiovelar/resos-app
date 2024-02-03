@@ -1,2 +1,1 @@
-export * from "./restaurant.helpers";
-
+export * from "./restaurant.helper";

@@ -2,7 +2,8 @@ import { httpClientPlugin as http } from "../../../src/config/plugins/http-clien
 
 describe("http-client.plugin.ts", () => {
   test("http.get should return a string", async () => {
-    const data = await http.get("https://jsonplaceholder.typicode.com/todos/1");
+    const url = "https://jsonplaceholder.typicode.com/todos/1";
+    const data = await http.get(url);
 
     expect(data).toEqual({
       userId: 1,

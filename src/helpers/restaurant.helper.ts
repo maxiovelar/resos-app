@@ -37,6 +37,9 @@ export const isRestaurantOpen = ({
 };
 
 export const generateImageUrl = (image: string) => {
+  if (/^https?:\/\//i.test(image)) {
+    throw new Error("Invalid image format");
+  }
   const url = new URL(image, imagesUrl);
   return url.toString();
 };

@@ -102,7 +102,7 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: "ts-jest",
+  preset: "ts-jest/presets/default-esm",
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -175,7 +175,32 @@ const config: Config = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        diagnostics: {
+          ignoreCodes: [1343],
+        },
+        astTransformers: {
+          before: [
+            {
+              path: "node_modules/ts-jest-mock-import-meta",
+              options: {
+                metaObjectReplacement: {
+                  env: {
+                    // Replicate as .env.local
+                    VITE_API_URL: "http://localhost:8080/api/restaurants",
+                    VITE_IMAGES_URL: "http://localhost:8080/assets/img/",
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    ],
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
