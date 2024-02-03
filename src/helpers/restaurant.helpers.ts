@@ -1,3 +1,5 @@
+import { imagesUrl } from "../constants/constants";
+
 interface IsRestaurantOpenProps {
   openHour: string;
   closeHour: string;
@@ -23,4 +25,8 @@ export const isRestaurantOpen = ({
   return currentTime >= restaurantOpenTime && currentTime <= restaurantCloseTime
     ? true
     : false;
+};
+
+export const generateImageUrl = (image: string) => {
+  return `${imagesUrl}/${image}`;
 };
