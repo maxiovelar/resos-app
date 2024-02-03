@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { type Restaurant } from "../../../types";
-import { isRestaurantOpen } from "../../../helpers";
+import { generateImageUrl, isRestaurantOpen } from "../../../helpers";
 import { Box, Tag, Typography } from "../../common";
-import { imagesUrl } from "../../../constants/constants";
 import style from "./RestaurantCard.module.css";
 import { CardContent, Card, CardMedia } from "@mui/material";
 import { ClockIcon, LocationIcon } from "../../icons";
@@ -15,7 +14,7 @@ export const RestaurantCard: FC<Props> = ({ restaurant }) => {
   const openHour = restaurant.hours.open;
   const closeHour = restaurant.hours.close;
   const isOpen = isRestaurantOpen({ openHour, closeHour });
-  const cardImageUrl = `${imagesUrl}/${restaurant.image}`;
+  const cardImageUrl = generateImageUrl(restaurant.image);
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -53,7 +52,7 @@ export const RestaurantCard: FC<Props> = ({ restaurant }) => {
           <Typography variant="body2" color="text.secondary">
             <ClockIcon
               fontSize={"small"}
-              sx={{ marginBottom: "-3px", marginRight: "5px" }}
+              sx={{ marginBottom: "-4px", marginRight: "4px" }}
             />
             Open from {restaurant.hours.open} to {restaurant.hours.close}
           </Typography>
@@ -62,7 +61,7 @@ export const RestaurantCard: FC<Props> = ({ restaurant }) => {
               fontSize={"small"}
               sx={{
                 marginBottom: "-3px",
-                marginRight: "5px",
+                marginRight: "4px",
                 marginTop: "5px",
               }}
             />

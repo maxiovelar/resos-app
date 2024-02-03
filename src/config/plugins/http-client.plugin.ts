@@ -3,7 +3,7 @@ import axios from "axios";
 export const httpClientPlugin = {
   get: async (url: string) => {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url, { timeout: 8000 });
       return response.data;
     } catch (error) {
       console.error("Error occurred during HTTP request:", error);

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { IconButton, InputBase, Paper } from "@mui/material";
 import { useDebounce } from "../../../hooks";
 import { SearchBarIcon } from "../../icons";
@@ -14,7 +14,10 @@ export const SearchBar: FC<Props> = ({
 }) => {
   const [inputValue, setInputValue] = useState("");
   const debouncedInputValue = useDebounce(inputValue, 500);
-  onSearch(debouncedInputValue);
+
+  useEffect(() => {
+    onSearch(debouncedInputValue);
+  }, [debouncedInputValue, onSearch]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -34,7 +37,7 @@ export const SearchBar: FC<Props> = ({
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder={placeholder}
-        inputProps={{ "aria-label": `${placeholder.toLowerCase}` }}
+        inputProps={{ "aria-label": `${placeholder.toLowerCase()}` }}
         onChange={handleChange}
       />
       <IconButton
