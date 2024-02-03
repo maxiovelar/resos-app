@@ -10,6 +10,6 @@ interface Props {
   loading?: "lazy" | "eager";
 }
 
-export const Image: FC<Props> = ({ ...props }) => {
-  return <img {...props} />;
+export const Image: FC<Props> = ({ alt, ...props }) => {
+  return <img alt={alt} {...props} />;
 };

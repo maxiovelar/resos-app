@@ -1,0 +1,5 @@
+.navbar {
+  backdrop-filter: blur(14px);
+  transition: ease-in;
+  transition-duration: 0.2s;
+}

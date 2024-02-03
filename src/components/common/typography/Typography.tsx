@@ -6,5 +6,7 @@ type TypographyMaterialUIProps = React.ComponentProps<
 >;
 
 export const Typography: FC<TypographyMaterialUIProps> = ({ ...props }) => {
-  return <Typography {...props}>{props.children}</Typography>;
+  return (
+    <TypographyMaterialUI {...props}>{props.children}</TypographyMaterialUI>
+  );
 };
