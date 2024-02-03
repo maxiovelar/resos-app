@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { RestaurantList } from "./components/restaurants";
-import { Layout } from "./components/ui";
 import { useFetchRestaurants } from "./hooks";
-import { HeaderShape, SearchSection } from "./components/ui";
-import { StateContainer } from "./components/ui";
+import {
+  HeaderShape,
+  Layout,
+  SearchSection,
+  StateContainer,
+} from "./components/ui";
 import style from "./App.module.css";
 import { Typography } from "./components/common";
 

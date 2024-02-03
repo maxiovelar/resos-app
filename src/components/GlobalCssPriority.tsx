@@ -1,6 +1,7 @@
 import { FC, type ReactNode } from "react";
-import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
+import { StyledEngineProvider } from "@mui/material/styles";
 import createTheme from "@mui/material/styles/createTheme";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 
 const theme = createTheme({
   palette: {

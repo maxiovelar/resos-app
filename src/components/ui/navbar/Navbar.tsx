@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material";
-import { ResOsLogo } from "../../icons/ResOsLogo";
+import { ResOsIcon } from "../../icons/ResOsIcon";
 import { useScrollPosition } from "../../../hooks";
 import { Box, Container } from "../../common";
 import style from "./Navbar.module.css";
@@ -24,7 +24,7 @@ export const Navbar = () => {
       className={style.navbar}
     >
       <Container>
-        <ResOsLogo />
+        <ResOsIcon />
       </Container>
     </Box>
   );
