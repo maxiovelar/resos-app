@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Alert } from "../../common";
+import { Loader } from "..";
 
 interface Props {
   isLoading: boolean;
@@ -15,7 +16,7 @@ export const StateContainer: FC<Props> = ({
   children,
 }) => {
   if (isLoading) {
-    return <>Loading...</>;
+    return <Loader />;
   }
 
   if (isError) {
