@@ -8,7 +8,8 @@
     "test:watch": "NODE_ENV=test jest  --watchAll",
     "test:coverage": "NODE_ENV=test jest  --coverage",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run test && tsc && vite build",
+    "start": "vite start",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
