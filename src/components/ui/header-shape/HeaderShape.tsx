@@ -7,5 +7,9 @@ interface Props {
 }
 
 export const HeaderShape: FC<Props> = ({ children, className }) => {
-  return <div className={`${style.skewed} ${className}`}>{children}</div>;
+  return (
+    <div className={`${style.skewed} ${className}`} data-testid="header-shape">
+      {children}
+    </div>
+  );
 };

@@ -15,6 +15,7 @@ export const RestaurantList: FC<Props> = ({ list = [] }) => {
       marginTop={"60px"}
       marginBottom={"150px"}
       className={style.list}
+      data-testid="restaurant-list"
     >
       {list.map((restaurant) => (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} />

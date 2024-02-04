@@ -15,6 +15,7 @@ export const SearchSection: FC<Props> = ({ handleSearch }) => {
       marginTop={"30px"}
       flexDirection={{ xs: "column", md: "row" }}
       gap={{ xs: "50px", md: "90px" }}
+      data-testid="search-section"
     >
       <Image
         width={"510px"}

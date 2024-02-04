@@ -8,7 +8,12 @@ interface Props {
 
 export const Layout: FC<Props> = ({ children }) => {
   return (
-    <Box width={"100vw"} display={"flex"} flexDirection={"column"}>
+    <Box
+      width={"100vw"}
+      display={"flex"}
+      flexDirection={"column"}
+      data-testid="layout"
+    >
       <Navbar />
       <Container maxWidth="lg">{children}</Container>
     </Box>
