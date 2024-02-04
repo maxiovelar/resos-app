@@ -39,6 +39,8 @@ export const SearchBar: FC<Props> = ({
         placeholder={placeholder}
         inputProps={{ "aria-label": `${placeholder.toLowerCase()}` }}
         onChange={handleChange}
+        value={inputValue}
+        data-testid="search-bar-input"
       />
       <IconButton
         type="button"
