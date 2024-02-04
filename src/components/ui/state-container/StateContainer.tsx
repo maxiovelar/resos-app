@@ -1,6 +1,6 @@
 import { FC } from "react";
+import { Loader } from "../loader/Loader";
 import { Alert } from "../../common";
-import { Loader } from "..";
 
 interface Props {
   isLoading: boolean;

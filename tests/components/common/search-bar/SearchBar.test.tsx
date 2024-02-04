@@ -3,11 +3,6 @@ import userEvent from "@testing-library/user-event";
 import { SearchBar } from "../../../../src/components/common";
 import "@testing-library/jest-dom";
 
-jest.mock(
-  "../../../../src/components/common/search-bar/SearchBar.module.css",
-  () => "style"
-);
-
 describe("SearchBar.tsx", () => {
   test("should render the SearchBar component without errors", () => {
     render(<SearchBar onSearch={() => {}} />);
