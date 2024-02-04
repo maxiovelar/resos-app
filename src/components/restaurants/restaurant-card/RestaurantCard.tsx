@@ -22,6 +22,7 @@ export const RestaurantCard: FC<Props> = ({ restaurant }) => {
         sx={{ height: 180 }}
         image={cardImageUrl}
         title={`${restaurant.name}`}
+        component="img"
       />
       <CardContent>
         <Typography

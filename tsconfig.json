@@ -1,25 +1,51 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES2020",
+//     "useDefineForClassFields": true,
+//     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+//     "module": "ESNext",
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+
+//     /* Bundler mode */
+//     "moduleResolution": "bundler",
+//     "allowImportingTsExtensions": true,
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "noEmit": true,
+//     "jsx": "react-jsx",
+
+//     /* Linting */
+//     "strict": true,
+//     "noUnusedLocals": true,
+//     "noUnusedParameters": true,
+//     "noFallthroughCasesInSwitch": true
+//   },
+//   "include": ["src", "**/*.ts", "**/*.tsx", "jest.config.js", "jest.setup.js"],
+//   "exclude": ["node_modules"],
+//   "references": [{ "path": "./tsconfig.node.json" }]
+// }
+
 {
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "module": "CommonJS", // Cambiado de "ESNext" a "CommonJS" para compatibilidad con Jest
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "moduleResolution": "node", // Cambiado de "bundler" a "node" para compatibilidad con Jest
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "**/*.ts", "**/*.tsx", "jest.config.ts", "jest.setup.js"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
