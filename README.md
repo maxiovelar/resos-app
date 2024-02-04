@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# resOS App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the Front-End project for the resOS technical assessment.
 
-Currently, two official plugins are available:
+## Running the App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run the app, use the following commands:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+npm install
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Project Overview
+
+This project is a React + TypeScript app built with Vite. It utilizes ESLint for linting and Jest for testing. The app includes components for restaurants, UI elements, and HTTP client configuration. It also features MaterialUI and CSS modules for styling.
+
+The resOS App is a modern web application designed to provide a seamless and efficient user experience for managing and browsing restaurant information.
+
+### User Interface
+
+The app features a clean and intuitive user interface, allowing users to view restaurant details, such as opening hours, location, and tags, in a visually appealing manner.
+
+### Modern Technologies
+
+Built with modern technologies such as React, TypeScript, and Vite, the app leverages the latest web development tools to ensure high performance and maintainability.
+
+### Scalability
+
+The app is designed to be scalable, allowing for future expansion and additional features to be seamlessly integrated.
+
+### Potential for Improvement
+
+- **Data Fetching and Cache Management**: Consider implementing Tanstack Query for improved data fetching and cache management, providing a more efficient and scalable solution for handling API data.
+- **Testing Coverage**: Extend the testing coverage to ensure robustness and reliability, potentially including integration tests and snapshot testing for components.
+
+For more details, refer to the individual files in the codebase.
