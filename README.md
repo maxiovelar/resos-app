@@ -10,8 +10,8 @@ To run the app, use the following commands:
 2. Set the environment variables
 
 ```
-VITE_API_URL=http://localhost:8080/api/restaurants
-VITE_IMAGES_URL=http://localhost:8080/assets/img/
+VITE_API_URL=
+VITE_IMAGES_URL=
 
 NODE_ENV=development
 ```
