@@ -17,7 +17,7 @@ export const RestaurantCard: FC<Props> = ({ restaurant }) => {
   const cardImageUrl = generateImageUrl(restaurant.image);
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: { xs: 380, md: 345 } }}>
       <CardMedia
         sx={{ height: 180 }}
         image={cardImageUrl}
