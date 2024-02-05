@@ -6,6 +6,18 @@ This is the Front-End project for the resOS technical assessment.
 
 To run the app, use the following commands:
 
+1. Clone the .env.example file to .env.local
+2. Set the environment variables
+
+```
+VITE_API_URL=http://localhost:8080/api/restaurants
+VITE_IMAGES_URL=http://localhost:8080/assets/img/
+
+NODE_ENV=development
+```
+
+3. Run the commands:
+
 ```
 npm install
 npm run dev
