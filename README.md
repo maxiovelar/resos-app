@@ -1,6 +1,6 @@
 # resOS App
 
-This is the Front-End project for the resOS technical assessment.
+This is the Front-End project for the resOS app.
 
 ## Running the App
 
